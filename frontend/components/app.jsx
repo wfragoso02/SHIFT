@@ -5,8 +5,8 @@ const App = () => (
   <div>
     <div>
       <Switch>
-        <Route exact path='/:userId' component={UserContainer}/>
-        <Route exact path='/' component={QuestionsContainer}/>
+        {/* <Route exact path='/:userId' component={UserContainer}/> */}
+        {/* <Route exact path='/' component={QuestionsContainer}/> */}
       </Switch>
     </div>
   </div>
