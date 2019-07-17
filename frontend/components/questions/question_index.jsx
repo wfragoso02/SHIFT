@@ -12,7 +12,7 @@ class QuestionIndex extends React.Component{
           {question.question}
         </li>
       )
-    })
+    });
     return(
       <div>
         {all_questions}
