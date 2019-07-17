@@ -1,4 +1,9 @@
 class Api::UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+    render :show
+  end
+
   def create
     @type = Type.find_by(test_case: params[:payload][:test_case])
     if @type
@@ -6,5 +11,4 @@ class Api::UsersController < ApplicationController
       render :show
     end
   end
-
 end

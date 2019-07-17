@@ -9,3 +9,7 @@ const receiveUser = (user) => ({
 export const createUser = (payload) => disptach => (
   UsersApiUtil.createUser(payload).then(user => disptach(receiveUser(user)))
 );
+
+export const fetchUser = (id) => disptach => (
+  UsersApiUtil.fetchUser(id).then(user => disptach(receiveUser(user)))
+);

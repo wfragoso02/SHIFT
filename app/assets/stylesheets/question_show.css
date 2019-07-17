@@ -1,0 +1,47 @@
+.question-show, .email-input{
+  border: 1px solid rgb(184, 183, 183);
+  position: relative;
+  border-radius: 3px;
+  width: 500px;
+  padding: 3vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center
+}
+
+.question-show-content{
+  width: 400px;
+}
+.question-show-content-description{
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+.radio-column{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.disagree{
+  color: rgb(255, 17, 0);
+}
+
+.agree{
+  color: rgb(5, 158, 69);
+}
+
+.radio-show{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 1vw;
+}
+
+.radio-buttons{
+  margin: 0 0.7vw;
+}
+
+/* input[type=radio]{
+  outline: 3px solid grey;
+} */

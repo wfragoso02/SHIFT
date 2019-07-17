@@ -1,0 +1,15 @@
+.header{
+  display: flex;
+  flex-direction: column;
+}
+.header-top{
+  color: rgb(0, 50, 107);
+  font-weight: 500;
+  font-size: 1.1em;
+  margin-bottom: 1vw;
+}
+
+.header-bottom{
+  font-weight: 300;
+  color: rgb(22, 22, 22);
+}
