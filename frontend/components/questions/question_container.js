@@ -5,7 +5,7 @@ import { createUser } from '../../actions/user_actions';
 
 const msp = (state) => {
   return{
-    questions: Object.values(state.enteties.questions)
+    questions: Object.values(state.entities.questions) || {}
   }
 }
 
