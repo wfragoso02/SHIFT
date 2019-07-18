@@ -1,8 +1,8 @@
 .question-show, .email-input{
-  border: 1px solid rgb(184, 183, 183);
+  border: 1px solid rgb(219, 219, 219);
   position: relative;
   border-radius: 3px;
-  width: 500px;
+  width: 55vw;
   padding: 3vw;
   display: flex;
   align-items: center;
@@ -11,16 +11,25 @@
 }
 
 .question-show-content{
-  width: 400px;
+  width: 40vw;
 }
 .question-show-content-description{
   margin-top: 1vw;
   margin-bottom: 1vw;
+  font-size: 1.2vw;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgb(107, 107, 107);
 }
 .radio-column{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.disagree, .agree{
+  font-size: 1vw;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .disagree{
@@ -39,9 +48,19 @@
 }
 
 .radio-buttons{
-  margin: 0 0.7vw;
+  margin: 0 1vw !important;
 }
 
-/* input[type=radio]{
-  outline: 3px solid grey;
-} */
+.email-input-content > h1 {
+  margin: 0;
+  font-size: 1.3vw;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgb(66, 66, 66);
+}
+
+.email-input-content > input{
+  width: 40vw !important;
+  height: 3.5vw !important;
+  border: 2px solid rgb(170, 170, 170) !important;
+}

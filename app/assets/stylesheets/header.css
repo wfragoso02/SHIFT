@@ -5,11 +5,13 @@
 .header-top{
   color: rgb(0, 50, 107);
   font-weight: 500;
-  font-size: 1.1em;
-  margin-bottom: 1vw;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .header-bottom{
-  font-weight: 300;
-  color: rgb(22, 22, 22);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(94, 94, 94);
+  letter-spacing: 0.5px;
 }

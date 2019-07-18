@@ -1,1 +1,1 @@
-json.extract! question, :id, :question
+json.extract! question, :id, :question, :dimension, :direction

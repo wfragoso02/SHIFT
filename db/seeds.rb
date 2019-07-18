@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
+User.destroy_all
 Type.destroy_all
 Question.destroy_all
 
@@ -13,7 +14,7 @@ lines = CSV.open('db/Questions.csv').readlines
 keys = lines.shift
 lines.each do |values|
   hash = Hash[keys.zip(values.map { |val| val })]
-  Question.create!(question: hash['Question'])
+  Question.create!(question: hash['Question'], dimension: hash['Dimension'], direction: hash['Direction'])
 end
 
 Type.create!(name: 'ENTP', test_case: [4, 3, 1, 6, 7, 3, 5, 3, 6, 6])

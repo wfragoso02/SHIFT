@@ -8,19 +8,34 @@ class QuestionIndex extends React.Component{
     super(props);
     this.state = {
       email: "",
-      test_case: Array(10).fill()
+      test_case: Array(10).fill(),
+      temp: Array(10).fill(0),
+
     }
     this.handleChange =  this.handleChange.bind(this);
     this.handleSubmit =  this.handleSubmit.bind(this);
     this.answerQuestion = this.answerQuestion.bind(this);
+    this.updateDimension = this.updateDimension.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
   componentDidMount(){
     this.props.fetchQuestions()
   }
 
-  answerQuestion(idx, value){
+  updateUser(idx, testCaseValue, dimensionValue){
+    this.answerQuestion(idx, testCaseValue);
+    this.updateDimension(idx, dimensionValue);
+  }
+
+  answerQuestion(idx, testCaseValue){
     let state = Object.assign(this.state);
-    state["test_case"][idx] = value;
+    state["test_case"][idx] = testCaseValue;
+    this.setState(state)
+  }
+
+  updateDimension(idx, dimensionValue){
+    let state = Object.assign(this.state);
+    state["temp"][idx] = dimensionValue;
     this.setState(state)
   }
 
@@ -39,12 +54,16 @@ class QuestionIndex extends React.Component{
     })
     if (state["email"].length < 1)runStateChange = false;
     if(runStateChange){
-      this.props.createUser(this.state).then((res) => {
+      state["EI"] = state["temp"][0] + state["temp"][3]+ state["temp"][8];
+      state["SN"] = state["temp"][1] + state["temp"][4];
+      state["TF"] = state["temp"][2] + state["temp"][6];
+      state["JP"] = state["temp"][5] + state["temp"][7] + state["temp"][9];
+      delete state['temp'];
+      this.props.createUser(state).then((res) => {
         this.props.history.push(`/${res.user.id}`)})
     }else{
       let element1 = document.getElementById('error');
       let element2 = document.getElementsByClassName('show')
-      debugger
       if(element2.length === 0){
         element1.classList.toggle("show");
       }
@@ -55,7 +74,11 @@ class QuestionIndex extends React.Component{
     const all_questions = this.props.questions.map((question,idx) => {
       return(
         <li key={question.id}>
-          <QuestionShow question={question} idx={idx}answerQuestion={this.answerQuestion}/>
+          <QuestionShow 
+          question={question} 
+          idx={idx} 
+          updateUser={this.updateUser}
+          />
         </li>
       )
     });

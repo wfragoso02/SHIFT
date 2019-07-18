@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import QuestionsContainer from '../components/questions/question_container';
-import UserContainer from '../components/users/users_container';
+import UserContainer from '../components/users/user_container';
 
 const App = () => (
   <div>
